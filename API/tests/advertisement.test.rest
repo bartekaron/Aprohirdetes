@@ -1,3 +1,35 @@
 //Összes advertisement
 ###
 GET http://localhost:3000/api/advertisement/
+
+//Hirdetés feladása (POST)
+###
+POST http://localhost:3000/api/advertisement
+Content-Type: application/json
+
+{
+    "title": "Használt laptop eladó",
+    "description": "Eladó egy használt laptop jó állapotban.",
+    "price": 120000,
+    "category": "Elektronika",
+    "userID": "c8a263ff-5aa0-453d-941f-60422e55da36"
+}
+
+
+
+//Hirdetés módosítása (PUT)
+###
+PUT  http://localhost:3000/api/advertisement/8ebd9fd0-af6b-4611-9591-c1926a31d333
+Content-Type: application/json
+
+{
+ "title": "Használt laptop eladó (új ár)",
+    "description": "Eladó egy használt laptop jó állapotban, most olcsóbban.",
+    "price": 100000,
+    "category": "Elektronika"
+}
+
+
+//Hirdetés törlése (DELETE)
+###
+DELETE  http://localhost:3000/api/advertisement/8ebd9fd0-af6b-4611-9591-c1926a31d333
