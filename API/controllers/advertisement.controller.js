@@ -11,6 +11,17 @@ exports.getAlladvertisements = async(_req, res, next) =>{
     }
 }
 
+exports.getAdvertisementByUserId = async (req, res, next) => {
+    try{
+        const userID = req.params.id;
+        const advertisement = await advertisementService.getAdvertisementsById(userID);
+        res.status(200).json({success: true, advertisements: advertisement});
+    }   
+    catch(err){
+        next(err);
+    }
+}
+
 exports.createAdvertisement = async (req, res, next) => {
     try {
         const { title, description, price, category, userID } = req.body;

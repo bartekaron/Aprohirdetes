@@ -49,3 +49,10 @@ exports.deleteAdvertisement = async (id) => {
         throw err;
     }
 };
+
+exports.getAdvertisementsById = async (userID) => {
+    if(!userID){
+        throw new Error('Hiányzó azonosító!');
+    }
+    return await Advertisement.findAll({where: {userID: userID}});
+}

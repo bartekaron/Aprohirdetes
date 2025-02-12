@@ -20,4 +20,7 @@ router.put('/:id', /*authMiddleware,*/ advertisementController.updateAdvertiseme
 // Hirdetés törlése
 router.delete('/:id', /*authMiddleware,*/ advertisementController.deleteAdvertisement);
 
+//Hirdetés by userID
+router.get('/:id', advertisementController.getAdvertisementByUserId)
+
 module.exports = router;
