@@ -29,5 +29,9 @@ export class ApiService {
   }
   
   
+  registration(table: string, data: object) {
+    return this.http.post(this.server + '/api/' + table + '/register', data);
+  }
+  
 
 }

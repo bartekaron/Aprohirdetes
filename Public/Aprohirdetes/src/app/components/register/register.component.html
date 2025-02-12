@@ -1,1 +1,26 @@
-<p>register works!</p>
+<h2>Regisztráció</h2>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Felhasználónév:</mat-label>
+        <input matInput placeholder="Lajos" [(ngModel)]="user.name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>E-mail cím:</mat-label>
+        <input matInput placeholder="lajos@gmail.com" [(ngModel)]="user.email">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Jelszó:</mat-label>
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.password">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Megerősítés:</mat-label>
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.confirm">
+    </mat-form-field>
+  
+    
+</form>
