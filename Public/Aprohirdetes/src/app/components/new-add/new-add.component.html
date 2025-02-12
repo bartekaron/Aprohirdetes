@@ -1,0 +1,32 @@
+<h2>Regisztráció</h2>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Felhasználónév:</mat-label>
+        <input matInput placeholder="Lajos" [(ngModel)]="advertisement.title" name="d" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>E-mail cím:</mat-label>
+        <input matInput placeholder="lajos@gmail.com" [(ngModel)]="advertisement.category"  name="c" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Jelszó:</mat-label>
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="advertisement.description"  name="b" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Megerősítés:</mat-label>
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="advertisement.price"  name="a" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    
+
+    
+
+
+    <div class="example-button-row">
+    <button mat-flat-button (click)="addNewAdd()">Feltöltés</button>
+    </div>
+</form>

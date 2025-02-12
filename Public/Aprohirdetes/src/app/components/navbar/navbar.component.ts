@@ -15,16 +15,21 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavbarComponent implements OnInit{
   isLoggedIn: boolean = false;
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) {
+    this.isLoggedIn = this.getToken() !== null;
+   }
   navItems: any [] = [];
   
   ngOnInit(): void {
+    this.navbarLoad();
+  }
+
+  navbarLoad(){
     if(this.isLoggedIn == true){
-      this.isLoggedIn = true;
       this.navItems = [
         { label: 'Hirdetések', url: '/ads' },
         { label: 'Hirdetések kezelése', url: '/adsHandle' },
-        { label: 'Kijelentkezés', url: '/logout' }
+        { label: 'Kijelentkezés', url : '/logout'}
       ]
     }
     else{
@@ -33,7 +38,17 @@ export class NavbarComponent implements OnInit{
         { label: 'Regisztráció', url: '/register' }
       ]
     }
-    
+  }
+  getToken(): string | null {
+    return localStorage.getItem('aprohirdetes');
+  }
+
+  logout() {
+    console.log('logout');
+    localStorage.removeItem('aprohirdetes');
+    localStorage.removeItem('user');
+    localStorage.removeItem('loggedUserId');
+    this.router.navigate(['/login']);
   }
 
 }

@@ -1,1 +1,18 @@
 
+<h2>Bejelentkezés</h2>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>E-mail cím:</mat-label>
+        <input matInput  [(ngModel)]="user.email"  name="c" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Jelszó:</mat-label>
+        <input matInput  [(ngModel)]="user.password"  name="b" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <div class="example-button-row">
+    <button mat-flat-button (click)="login()">Bejelentkezés</button>
+    </div>
+</form>

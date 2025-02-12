@@ -4,8 +4,8 @@ export interface Advertisement {
     date: Date;
     category: string;
     title: string;
-    description: Text;
+    description: string;
     price: number;
-    image: Blob;
+    image: string;
   }
   

@@ -33,5 +33,13 @@ export class ApiService {
     return this.http.post(this.server + '/api/' + table + '/register', data);
   }
   
+  login(table: string, data: object) {
+    return this.http.post(this.server + '/api/' + table + '/login/', data);
+  }
+
+  getAllAdvertisements() {
+    return this.http.get(this.server + '/api/advertisement/');
+  }
+
 
 }

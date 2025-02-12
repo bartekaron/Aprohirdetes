@@ -1,1 +1,19 @@
-<p>ads works!</p>
+<div class="ad-card-container">
+    <mat-card class="ad-card" *ngFor="let ad of ads">
+        <mat-card-header>
+            <mat-card-title>{{ ad.title }}</mat-card-title>
+            <mat-card-subtitle>{{ ad.category }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Date: {{ ad.date | date }}</p>
+            <p>Description: {{ ad.description }}</p>
+            <p>Price: {{ ad.price }}</p>
+            <img src="{{ ad.image }}" alt="Ad Image">
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<div class="add-button">
+    <button mat-flat-button (click)="newAdd()">Új hirdetés létrehozása</button>
+</div>
+

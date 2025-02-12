@@ -2,25 +2,26 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
         <mat-label>Felhasználónév:</mat-label>
-        <input matInput placeholder="Lajos" [(ngModel)]="user.name">
+        <input matInput placeholder="Lajos" [(ngModel)]="user.name" name="d" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
         <mat-label>E-mail cím:</mat-label>
-        <input matInput placeholder="lajos@gmail.com" [(ngModel)]="user.email">
+        <input matInput placeholder="lajos@gmail.com" [(ngModel)]="user.email"  name="c" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width">
         <mat-label>Jelszó:</mat-label>
-        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.password">
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.password"  name="b" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width">
         <mat-label>Megerősítés:</mat-label>
-        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.confirm">
+        <input matInput placeholder="csibészlajos123" [(ngModel)]="user.confirm"  name="a" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
-  
-    
+    <div class="example-button-row">
+    <button mat-flat-button (click)="registration()">Regisztráció</button>
+    </div>
 </form>
