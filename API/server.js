@@ -20,6 +20,7 @@ app.use(express.urlencoded({extended: true}));
 app.use('/api', routes);
 app.use(errorMiddleware);
 
+require('./jobs/cronJob.js');
 
 db.sync({alter: config.db.alter, force: config.db.force})
     .then(()=>{
