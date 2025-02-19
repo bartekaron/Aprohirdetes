@@ -1,27 +1,32 @@
-<h2>Regisztráció</h2>
+<h2>Új hirdetés</h2>
 <form class="example-form">
     <mat-form-field class="example-full-width">
-        <mat-label>Felhasználónév:</mat-label>
-        <input matInput placeholder="Lajos" [(ngModel)]="advertisement.title" name="d" [ngModelOptions]="{standalone: true}">
+        <mat-label>Név:</mat-label>
+        <input matInput placeholder="Bab" [(ngModel)]="advertisement.title" name="d" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
+
+
+    <mat-form-field>
+    <mat-label>Kategória</mat-label>
+    <mat-select [(ngModel)]="advertisement.category"  name="c" [ngModelOptions]="{standalone: true}">
+        @for (cat of categories; track cat) {
+        <mat-option [value]="cat.value" >{{cat.viewValue}}</mat-option>
+        }
+    </mat-select>
+    </mat-form-field>
+
 
     <mat-form-field class="example-full-width">
-        <mat-label>E-mail cím:</mat-label>
-        <input matInput placeholder="lajos@gmail.com" [(ngModel)]="advertisement.category"  name="c" [ngModelOptions]="{standalone: true}">
+        <mat-label>Leírás:</mat-label>
+        <input matInput placeholder="Nagyon nagy" [(ngModel)]="advertisement.description"  name="b" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
 
     <mat-form-field class="example-full-width">
-        <mat-label>Jelszó:</mat-label>
-        <input matInput placeholder="csibészlajos123" [(ngModel)]="advertisement.description"  name="b" [ngModelOptions]="{standalone: true}">
+        <mat-label>Ár:</mat-label>
+        <input matInput placeholder="0" [(ngModel)]="advertisement.price"  name="a" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
 
-
-    <mat-form-field class="example-full-width">
-        <mat-label>Megerősítés:</mat-label>
-        <input matInput placeholder="csibészlajos123" [(ngModel)]="advertisement.price"  name="a" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
-    
 
     
 

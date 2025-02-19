@@ -26,7 +26,7 @@ export class AuthService {
     localStorage.setItem('user', JSON.stringify(user));
     this.isLoggedInSubject.next(true);
   }
-
+  
   logout() {
     localStorage.removeItem(this.tokenName);
     localStorage.removeItem('user');
@@ -44,6 +44,11 @@ export class AuthService {
       return JSON.parse(decodedUTF8Payload);
     }
     return null;
+  }
+
+  getUserId(): string | null {
+    const user = this.loggedUser();
+    return user ? user.id : null;
   }
 
 }
