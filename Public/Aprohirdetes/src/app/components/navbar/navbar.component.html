@@ -1,7 +1,6 @@
-
 <button mat-button [matMenuTriggerFor]="menu">Kattincs ide bébibogyó</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let item of navItems" routerLink="{{item.url}}">
-    <a >{{ item.label }}</a>
+  <button *ngFor="let item of navItems" mat-menu-item [routerLink]="item.url" (click)="item.action ? item.action() : null">
+    <a>{{ item.label }}</a>
   </button>
 </mat-menu>
